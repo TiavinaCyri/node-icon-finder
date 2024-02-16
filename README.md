@@ -1,5 +1,5 @@
 ## Link
-node-icon-finder-xma7.vercel.app/icon/
+[node-icon-finder-xma7.vercel.app/icon/{query}](https://node-icon-finder.vercel.app/icon/food)
 
 ## Params
-after icon/ like icon/food
+query : your icon like Food
