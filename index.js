@@ -14,11 +14,12 @@ const oauth = new OAuth.OAuth(URL, URL, KEY, SECRET, "1.0", null, "HMAC-SHA1")
 
 app.use(cors());
 
-app.get("/icon/:query", (req, res) => {
+app.get("/icon/:query/:limit", (req, res) => {
     const query = req.params.query
-    console.log(query)
+    const limit = req.params.limit
+    console.log(query,limit)
 
-    oauth.get(`https://api.thenounproject.com/v2/icon?query=${query}`, null, null, (err, data) => {
+    oauth.get(`https://api.thenounproject.com/v2/icon?query=${query}&limit=${limit}`, null, null, (err, data) => {
         if (err) {
             console.error(err)
             res.status(500).send("Error fetching Noun Project API")
