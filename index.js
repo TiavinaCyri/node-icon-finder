@@ -1,6 +1,7 @@
 const express = require("express")
 const OAuth = require("oauth")
 const dotenv = require("dotenv")
+const cors = require("cors")
 dotenv.config()
 
 const app = express()
@@ -10,6 +11,8 @@ const SECRET = process.env.APP_SECRET
 const URL = process.env.URL
 
 const oauth = new OAuth.OAuth(URL, URL, KEY, SECRET, "1.0", null, "HMAC-SHA1")
+
+app.use(cors());
 
 app.get("/icon/:query", (req, res) => {
     const query = req.params.query
